@@ -1,0 +1,75 @@
+@keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fadeout {
+    from {opacity: 1}
+    to {opacity: 0}
+}
+
+@keyframes wiggle {
+  from { transform: translateY(0.5em); }
+  to   { transform: translateY(0); }
+}
+
+body {
+    margin: 0;
+    background-color: #2B2C28;
+    min-height: 100dvh;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: 
+    fadein 1s forwards,
+    fadeout 5s ease-in forwards 1s;
+
+    color: #C0BCB5;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.loading span {
+    opacity: 1;
+    display: inline-block;
+    transform: translateY(0.5em);
+    animation: wiggle 0.5s forwards ease-in-out infinite alternate;
+}
+
+.loading span:nth-child(1) { animation-delay: 0.1s; }
+.loading span:nth-child(2) { animation-delay: 0.2s; }
+.loading span:nth-child(3) { animation-delay: 0.3s; }
+.loading span:nth-child(4) { animation-delay: 0.4s; }
+.loading span:nth-child(5) { animation-delay: 0.5s; }
+.loading span:nth-child(6) { animation-delay: 0.6s; }
+.loading span:nth-child(7) { animation-delay: 0.7s; }
+.loading span:nth-child(8) { animation-delay: 0.8s; }
+.loading span:nth-child(9) { animation-delay: 0.9s; }
+.loading span:nth-child(10) { animation-delay: 1s; }
+
+.content {
+    max-height: 100dvh;
+    max-width: 100dvw;
+    height: 100%;
+    width: 100%;
+}
+
+.content img {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    opacity: 0;
+
+    animation: fadein 10s forwards;
+    animation-delay: 3s;
+}
