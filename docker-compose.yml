@@ -1,11 +1,9 @@
 services:
   web:
-    image: nginx:alpine
+    build: .
     restart: unless-stopped
     expose:
       - 80
-    volumes:
-      - ./site:/usr/share/nginx/html:ro
     networks:
       - nginx-network
 
